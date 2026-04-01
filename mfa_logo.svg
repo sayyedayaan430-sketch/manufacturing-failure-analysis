@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#da3633"/>
+      <stop offset="100%" style="stop-color:#b91c1c"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#238636"/>
+      <stop offset="100%" style="stop-color:#2ea043"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="200" cy="200" r="195" fill="url(#bgGrad)" stroke="#30363d" stroke-width="2"/>
+  <circle cx="200" cy="200" r="175" fill="none" stroke="#da3633" stroke-width="1" stroke-dasharray="8 4" opacity="0.3"/>
+
+  <!-- Gear shape (outer) -->
+  <path d="M200 100 L215 130 L248 118 L248 152 L278 165 L260 192 L278 220
+           L248 232 L248 266 L215 254 L200 284 L185 254 L152 266 L152 232
+           L122 220 L140 192 L122 165 L152 152 L152 118 L185 130 Z"
+        fill="none" stroke="#30363d" stroke-width="2" opacity="0.6"/>
+
+  <!-- Gear center circle -->
+  <circle cx="200" cy="192" r="55" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+
+  <!-- Warning triangle inside gear -->
+  <path d="M200 152 L232 208 L168 208 Z"
+        fill="url(#redGrad)" filter="url(#glow)" opacity="0.95"/>
+
+  <!-- Exclamation mark -->
+  <rect x="196" y="164" width="8" height="26" rx="4" fill="white"/>
+  <circle cx="200" cy="200" r="4" fill="white"/>
+
+  <!-- Sensor readings - small bars -->
+  <!-- Bar 1 (green - normal) -->
+  <rect x="95" y="155" width="12" height="40" rx="3" fill="url(#greenGrad)" opacity="0.8"/>
+  <rect x="95" y="148" width="12" height="8" rx="2" fill="#2ea043" opacity="0.4"/>
+
+  <!-- Bar 2 (green) -->
+  <rect x="112" y="162" width="12" height="33" rx="3" fill="url(#greenGrad)" opacity="0.8"/>
+
+  <!-- Bar 3 (yellow - warning) -->
+  <rect x="129" y="148" width="12" height="47" rx="3" fill="#d29922" opacity="0.8"/>
+
+  <!-- Bar 4 (red - critical) -->
+  <rect x="258" y="140" width="12" height="55" rx="3" fill="url(#redGrad)" opacity="0.9" filter="url(#glow)"/>
+
+  <!-- Bar 5 (red) -->
+  <rect x="275" y="150" width="12" height="45" rx="3" fill="url(#redGrad)" opacity="0.8"/>
+
+  <!-- Bar 6 (yellow) -->
+  <rect x="292" y="158" width="12" height="37" rx="3" fill="#d29922" opacity="0.8"/>
+
+  <!-- Connecting line (flatline then spike) -->
+  <polyline points="80,240 120,240 145,240 160,220 175,260 185,230 200,240 280,240 300,215 315,255 330,240 360,240"
+            fill="none" stroke="#da3633" stroke-width="2.5" opacity="0.7" filter="url(#glow)"/>
+
+  <!-- Dot on spike -->
+  <circle cx="300" cy="215" r="5" fill="#da3633" filter="url(#glow)"/>
+
+  <!-- Project name -->
+  <text x="200" y="318" text-anchor="middle" font-family="Arial, sans-serif"
+        font-size="17" font-weight="bold" fill="#ffffff" letter-spacing="1">Manufacturing</text>
+  <text x="200" y="340" text-anchor="middle" font-family="Arial, sans-serif"
+        font-size="17" font-weight="bold" fill="#da3633" letter-spacing="1">Failure Analysis</text>
+
+  <!-- Dots -->
+  <circle cx="200" cy="360" r="3" fill="#da3633" opacity="0.7"/>
+  <circle cx="215" cy="360" r="2" fill="#da3633" opacity="0.4"/>
+  <circle cx="185" cy="360" r="2" fill="#da3633" opacity="0.4"/>
+</svg>
